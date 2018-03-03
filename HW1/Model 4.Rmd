@@ -9,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.width=1
 
 library(knitr)
 library(broom)
+library(car)
 ```
 
 ## Model 4 - Base Runs (BsR)
@@ -50,8 +51,12 @@ tbl4 <- tidy(model4)
 kable(tbl4)
 kable(glance(model4))
 
-par(mfrow=c(2,2)) 
-plot(model4)
+residualPlots(model4)
+qqPlot(model4, id.n=3, main="Q-Q Plot")
+influenceIndexPlot(model4, id.n=3)
+influencePlot(model4, id.n=3)
+hist(model4$residuals, main="Histogram of Residuals")
+
 
 
 ```
@@ -75,8 +80,11 @@ tbl4b <- tidy(model4b)
 kable(tbl4b)
 kable(glance(model4b))
 
-par(mfrow=c(2,2)) 
-plot(model4b)
+residualPlots(model4b)
+qqPlot(model4b, id.n=3, main="Q-Q Plot")
+influenceIndexPlot(model4b, id.n=3)
+influencePlot(model4b, id.n=3)
+hist(model4b$residuals, main="Histogram of Residuals")
 
 
 ```
