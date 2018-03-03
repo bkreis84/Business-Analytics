@@ -64,7 +64,7 @@ plot(model4b)
 
 ```
 
-Using the bidirectional approach, BsR was removed from the model. Once BsR was removed, BATTING_2B, BATTING_1B and BATTING_3B regained their significance. This is ikely caused by collinearity within the variables as BsR is a derived stat based in large part on hits. As such, Model 4B is superior in this anlysis.
+Using the bidirectional approach, BsR was removed from the model. Once BsR was removed, BATTING_2B, BATTING_1B and BATTING_3B regained their significance. This is ikely caused by collinearity within the variables as BsR is a derived stat based in large part on hits. Because BsR was found to not add predictive ability to our model, Model 4B is the superior model.
 
 
 
