@@ -11,12 +11,28 @@ library(knitr)
 library(broom)
 ```
 
-## Model 4
-
+## Model 4 - Base Runs (BsR)
+\
 In this model we incorporate our calculated metric Base Runs(BsR), a sabermetric stat created by David Smyth, to predict the number of runs a team would be expected to have scored based on the types of hits and number of walks. We include all available variables, beginning with BsR, and use forward stepwise regression to add statistically significant variables to the model.
 
+BsR is calulated as follows:
 
+\
+$$\frac{A * B}{B + C} + D \\ 
+\\
+\\
+$$
 
+$$ A  = Hits + Walks - Home Runs \\
+B = (1.4*Total Bases - 0.6*Hits - 3*HomeRuns + 0.1*Walks) \\
+C = AB - H \\
+D = HR \\
+\\
+$$
+
+\
+We approximated the average at bats for a team in a 162 game season infromation from baseball reference. 
+https://www.baseball-reference.com/leagues/MLB/bat.shtml
 
 ```{r}
 
